@@ -121,3 +121,6 @@ CROSSINLINE crossinline 1
 REIFIED reified 1
 EXPECT expect 1
 ACTUAL actual 1
+BooleanLiteral true 1
+BooleanLiteral false 1
+NullLiteral null 1
