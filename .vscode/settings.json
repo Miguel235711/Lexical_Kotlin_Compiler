@@ -39,6 +39,7 @@
         "cstring": "cpp",
         "ctime": "cpp",
         "memory": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "string": "cpp"
     }
 }

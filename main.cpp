@@ -19,21 +19,21 @@ int main(){
 
     if((dir=opendir(cases_path_c_str))!=NULL){
         while((ent=readdir(dir))!=NULL){
-            std::cout << "*** filename: " << ent->d_name << "\n";
+            //std::cout << "*** filename: " << ent->d_name << "\n";
             if(strcmp(ent->d_name,".")&&strcmp(ent->d_name,"..")){
                 char path[512];
                 sprintf(path,"%s%s",cases_path_c_str,ent->d_name);
                 std::cout << path << "\n";
-                auto in_stream = std::ifstream(path);
+                auto in_stream = std::wifstream(path);
                 if(!in_stream.is_open()){
                     std::cout << "error opening file " << path << "\n";
                     return EXIT_FAILURE;
                 }
                 //analysis logic: TODO
-                char c;
+                wchar_t c;
                 std::string token;
                 int next_status;
-                auto handle_char = [&](char c){
+                auto handle_char = [&](wchar_t c){
                     if(!(next_status=automata.next(c))){
                         if(automata.in_token()){
                             //token found
@@ -75,12 +75,13 @@ int main(){
                 };
                 while(in_stream.get(c)){
                     //std::cout << "is c == \\: " << (c=='\\') << "\n";
-                    //std::cout << "c: " << c << "\n";
+                    //std::cout << "c: " << c << 'é' << "\n";
                     if(handle_char(c)==EXIT_FAILURE)
                         return  EXIT_FAILURE;
                 }
                 handle_char('\n'); //for last token
                 in_stream.close();
+                //return 0;
             }
         }
     }else{

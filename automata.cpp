@@ -5,27 +5,28 @@ Automata::Automata(){
     for(auto & adhoc_node : adhoc_nodes)
         adhoc_node = new Node();
 
-    add_range('1','9',identifer_chars);
+    add_range('1','9',identifer_wchar_ts);
 
-    number_but_0_chars = identifer_chars;
+    number_but_0_wchar_ts = identifer_wchar_ts;
 
-    identifer_chars.push_back('0');
+    identifer_wchar_ts.push_back('0');
 
-    hex_chars = number_chars = identifer_chars;
+    hex_wchar_ts = number_wchar_ts = identifer_wchar_ts;
 
-    add_range('a','z',identifer_chars);
-    add_range('A','Z',identifer_chars);
+    add_range('a','z',identifer_wchar_ts);
+    add_range('A','Z',identifer_wchar_ts);
     
-    identifer_chars.push_back('_');
+    identifer_wchar_ts.push_back('_');
 
-    add_range('A','F',hex_chars);
-    add_range('a','f',hex_chars);
+    add_range('A','F',hex_wchar_ts);
+    add_range('a','f',hex_wchar_ts);
 
 
     add_adhoc_nodes();
     
     std::ifstream in("reserved.in");
-    std::string line,label,token;
+    std::string label;
+    std::string line,token;
     while(std::getline(in,line)){
         std::stringstream line_stream(line);
         line_stream >> label >> token;
@@ -47,8 +48,8 @@ void Automata::add_adhoc_nodes(){
     //part 2
     root_children['0']={adhoc_nodes[33],0};
     root_children['.']={adhoc_nodes[58],0};
-    specific(root_children,{adhoc_nodes[47],0},number_but_0_chars);
-    //std::vector<char> letters;
+    specific(root_children,{adhoc_nodes[47],0},number_but_0_wchar_ts);
+    //std::vector<wchar_t> letters;
     //specific(root_children,{adhoc_nodes[29],0},letters);
     //root_children['_']={adhoc_nodes[29],0};
     //0
@@ -95,7 +96,7 @@ void Automata::add_adhoc_nodes(){
     specific(_9_ch,{adhoc_nodes[14],0},{'t','b','r','n','\'','"','\\','$'});
     //10
     auto & _10_ch = adhoc_nodes[10]->children;
-    std::vector<char> v_09_AF_af;
+    std::vector<wchar_t> v_09_AF_af;
     add_range('0','9',v_09_AF_af);
     add_range('A','F',v_09_AF_af);
     add_range('a','f',v_09_AF_af);
@@ -134,7 +135,7 @@ void Automata::add_adhoc_nodes(){
     //20
     auto & _20_ch = adhoc_nodes[20]->children;
     _20_ch['u']={adhoc_nodes[21],0};
-    specific(_20_ch,{adhoc_nodes[17],0},escaped_identifier_chars);
+    specific(_20_ch,{adhoc_nodes[17],0},escaped_identifier_wchar_ts);
     //21
     auto & _21_ch = adhoc_nodes[21]->children;
     specific(_21_ch,{adhoc_nodes[22],0},v_09_AF_af);
@@ -168,7 +169,7 @@ void Automata::add_adhoc_nodes(){
         //Pendant because it's for Identifier
     adhoc_nodes[29]->label="Identifier";
     auto & _29_ch = adhoc_nodes[29]->children;
-    specific(_29_ch,{adhoc_nodes[29],0},identifer_chars);
+    specific(_29_ch,{adhoc_nodes[29],0},identifer_wchar_ts);
     //30
     auto & _30_ch = adhoc_nodes[30]->children;
     all_but(_30_ch,{adhoc_nodes[31],0},{'\r','\n','`'});
@@ -195,7 +196,7 @@ void Automata::add_adhoc_nodes(){
     _33_ch['X']={adhoc_nodes[38],0};
     _33_ch['u']={adhoc_nodes[55],0};
     _33_ch['U']={adhoc_nodes[55],0};
-    specific(_33_ch,{adhoc_nodes[44],0},number_chars);
+    specific(_33_ch,{adhoc_nodes[44],0},number_wchar_ts);
     //34
     auto & _34_ch = adhoc_nodes[34]->children;
     _34_ch['0']={adhoc_nodes[35],0};
@@ -225,7 +226,7 @@ void Automata::add_adhoc_nodes(){
     _37_ch['1']={adhoc_nodes[36],0};
     //38
     auto & _38_ch = adhoc_nodes[38]->children;
-    specific(_38_ch,{adhoc_nodes[39],0},hex_chars);
+    specific(_38_ch,{adhoc_nodes[39],0},hex_wchar_ts);
     //39
     adhoc_nodes[39]->label = "HexLiteral";
     auto & _39_ch = adhoc_nodes[39]->children;
@@ -233,7 +234,7 @@ void Automata::add_adhoc_nodes(){
     _39_ch['L']={adhoc_nodes[54],0};
     _39_ch['U']={adhoc_nodes[55],0};
     _39_ch['u']={adhoc_nodes[55],0};
-    specific(_39_ch,{adhoc_nodes[40],0},hex_chars);
+    specific(_39_ch,{adhoc_nodes[40],0},hex_wchar_ts);
     //40
     adhoc_nodes[40]->label = "HexLiteral";
     auto & _40_ch = adhoc_nodes[40]->children;
@@ -241,20 +242,20 @@ void Automata::add_adhoc_nodes(){
     _40_ch['U']={adhoc_nodes[55],0};
     _40_ch['u']={adhoc_nodes[55],0};
     _40_ch['L']={adhoc_nodes[54],0};
-    specific(_40_ch,{adhoc_nodes[40],0},hex_chars);
+    specific(_40_ch,{adhoc_nodes[40],0},hex_wchar_ts);
     //41
     auto & _41_ch = adhoc_nodes[41]->children;
     _41_ch['_']={adhoc_nodes[41],0};
-    specific(_41_ch,{adhoc_nodes[40],0},hex_chars);
+    specific(_41_ch,{adhoc_nodes[40],0},hex_wchar_ts);
     //42
     auto & _42_ch = adhoc_nodes[42]->children;
     _42_ch['.']={adhoc_nodes[59],0};
-    specific(_42_ch,{adhoc_nodes[49],0},number_chars);
+    specific(_42_ch,{adhoc_nodes[49],0},number_wchar_ts);
     //43
     auto & _43_ch = adhoc_nodes[43]->children;
     _43_ch['+']={adhoc_nodes[51],0};
     _43_ch['-']={adhoc_nodes[51],0};
-    specific(_43_ch,{adhoc_nodes[50],0},number_chars);
+    specific(_43_ch,{adhoc_nodes[50],0},number_wchar_ts);
     //44
     auto & _44_ch = adhoc_nodes[44]->children;
     _44_ch['_']={adhoc_nodes[45],0};
@@ -263,11 +264,11 @@ void Automata::add_adhoc_nodes(){
     _44_ch['f']={adhoc_nodes[46],0};
     _44_ch['F']={adhoc_nodes[46],0};
     _44_ch['.']={adhoc_nodes[42],0};
-    specific(_44_ch,{adhoc_nodes[44],0},number_chars);
+    specific(_44_ch,{adhoc_nodes[44],0},number_wchar_ts);
     //45
     auto & _45_ch = adhoc_nodes[45]->children;
     _45_ch['_']={adhoc_nodes[45],0};
-    specific(_45_ch,{adhoc_nodes[44],0},number_chars);
+    specific(_45_ch,{adhoc_nodes[44],0},number_wchar_ts);
     //46
     adhoc_nodes[46]->label = "FloatLiteral";
     //47
@@ -282,11 +283,11 @@ void Automata::add_adhoc_nodes(){
     _47_ch['L']={adhoc_nodes[54],0};
     _47_ch['U']={adhoc_nodes[55],0};
     _47_ch['u']={adhoc_nodes[55],0};
-    specific(_47_ch,{adhoc_nodes[47],0},number_chars);
+    specific(_47_ch,{adhoc_nodes[47],0},number_wchar_ts);
     //48
     auto & _48_ch = adhoc_nodes[48]->children;
     _48_ch['_']={adhoc_nodes[48],0};
-    specific(_48_ch,{adhoc_nodes[47],0},number_chars);
+    specific(_48_ch,{adhoc_nodes[47],0},number_wchar_ts);
     //49
     adhoc_nodes[49]->label = "DoubleLiteral";
     auto & _49_ch = adhoc_nodes[49]->children;
@@ -295,25 +296,25 @@ void Automata::add_adhoc_nodes(){
     _49_ch['f']={adhoc_nodes[46],0};
     _49_ch['E']={adhoc_nodes[43],0};
     _49_ch['e']={adhoc_nodes[43],0};
-    specific(_49_ch,{adhoc_nodes[49],0},number_chars);
+    specific(_49_ch,{adhoc_nodes[49],0},number_wchar_ts);
     //50
     adhoc_nodes[50]->label = "DoubleLiteral";
     auto & _50_ch = adhoc_nodes[50]->children;
     _50_ch['_']={adhoc_nodes[53],0};
     _50_ch['F']={adhoc_nodes[46],0};
     _50_ch['f']={adhoc_nodes[46],0};
-    specific(_50_ch,{adhoc_nodes[50],0},number_chars);
+    specific(_50_ch,{adhoc_nodes[50],0},number_wchar_ts);
     //51
     auto & _51_ch = adhoc_nodes[51]->children;
-    specific(_51_ch,{adhoc_nodes[50],0},number_chars);
+    specific(_51_ch,{adhoc_nodes[50],0},number_wchar_ts);
     //52
     auto & _52_ch = adhoc_nodes[52]->children;
     _52_ch['_']={adhoc_nodes[52],0};
-    specific(_52_ch,{adhoc_nodes[49],0},number_chars);
+    specific(_52_ch,{adhoc_nodes[49],0},number_wchar_ts);
     //53
     auto & _53_ch = adhoc_nodes[53]->children;
     _53_ch['_']={adhoc_nodes[53],0};
-    specific(_53_ch,{adhoc_nodes[50],0},number_chars);
+    specific(_53_ch,{adhoc_nodes[50],0},number_wchar_ts);
     //54
     adhoc_nodes[54]->label = "LongLiteral";
     //55
@@ -325,9 +326,9 @@ void Automata::add_adhoc_nodes(){
     //57
     adhoc_nodes[57]->is_error = true;
     //58
-    adhoc_nodes[58]->label="DOT";
+    adhoc_nodes[58]->label= "DOT";
     auto & _58_ch = adhoc_nodes[58]->children;
-    specific(_58_ch,{adhoc_nodes[49],0},number_chars);
+    specific(_58_ch,{adhoc_nodes[49],0},number_wchar_ts);
     //59
     adhoc_nodes[59]->label = "IntegerLiteral";
     adhoc_nodes[59]->go_back = 2;
@@ -337,20 +338,20 @@ void Automata::add_adhoc_nodes(){
     adhoc_nodes[60]->label = "IntegerLiteral";
     adhoc_nodes[60]->go_back = 3;
 }
-void Automata::all_but(std::unordered_map<char,std::pair<Node*,int> > & children,std::pair<Node *,int>to, std::unordered_set<char> but){
+void Automata::all_but(std::unordered_map<wchar_t,std::pair<Node*,int> > & children,std::pair<Node *,int>to, std::unordered_set<wchar_t> but){
     //dangerous!!
-    for(char c = 0 ;; c++){
+    for(wchar_t c = 0 ;; c++){
         if(but.find(c)==but.end())
             children[c]=to;
         if(c==last_c)
             break;
     }
 }
-void Automata::specific(std::unordered_map<char,std::pair<Node*,int> > & children,std::pair<Node *,int>to, std::vector<char> which){
+void Automata::specific(std::unordered_map<wchar_t,std::pair<Node*,int> > & children,std::pair<Node *,int>to, std::vector<wchar_t> which){
     for(auto c : which)
         children[c]=to;
 }
-void Automata::add_range(char begin,char end,std::vector<char> & v){
+void Automata::add_range(wchar_t begin,wchar_t end,std::vector<wchar_t> & v){
     if(begin<=end)
         for(;;begin++){
             v.push_back(begin);
@@ -364,7 +365,7 @@ Automata::~Automata(){
 int Automata::get_go_back(){
     return cur->go_back;
 }
-int Automata::next(char x){
+int Automata::next(wchar_t x){
     auto & children = cur->children;
     auto next = children.find(x);
     if(next!=children.end()){
@@ -394,7 +395,7 @@ std::string Automata::get_token_label(){
 }
 void Automata::add_to_trie(std::string token, std::string label){
     Node * cur = root;
-    for(char c: token){
+    for(wchar_t c: token){
         auto & children = cur->children;
         auto next = children.find(c);
         if(next==children.end())
@@ -410,7 +411,7 @@ void Automata::restart(){
 }
 void Automata::add_to_identifier_edges(Node * node){
     auto & children =  node->children;
-    for(char c:identifer_chars){
+    for(wchar_t c:identifer_wchar_ts){
         if(!isdigit(c)||node!=root){
             auto it = children.find(c);
             if(it==children.end())
@@ -434,7 +435,7 @@ void Automata::add_to_identifier_edges(Node * node){
 //         "++"
 //         ,"+"
 //         ,"..."
-//         ,"val"
+//         ,"va"
 //         ,"*="
 //         ,"//efd kdljf fdfs"
 //         ,"/*jflkj*/"
