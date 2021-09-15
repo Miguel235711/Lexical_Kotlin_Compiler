@@ -52,7 +52,10 @@ int main(){
                                     token.push_back(c);
                                 std::cout << token << " is not a valid token\n";
                                 return EXIT_FAILURE;
-                            }
+                            }/*else if(isspace(c))
+                                //NL WS
+                                if(c=='\n' || c=='\r')
+                                    std::cout << "NL\n";*/
                             //ignore space
                         }
                         automata.restart();
