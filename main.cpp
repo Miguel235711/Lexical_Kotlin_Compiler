@@ -7,6 +7,7 @@
 #include <fstream>
 #include <cstring>
 #include <functional>
+#include <unordered_set>
 
 std::string cases_path = "./cases/";
 
@@ -20,7 +21,17 @@ void print_error(int row,int col,wchar_t c,std::string & path,std::string & toke
     out(get_char_error_msg(row,col,token.back(),path)+"\""+token+"\""+" is not a valid token\n");
 }
 
-int analyze_file(std::string path,Automata automata,std::function<void(std::string)> & out){
+std::unordered_set<std::string> to_ignore_tokens = {"DelimitedComment","LineComment"};
+
+void handle_found_token(const std::string & token,Automata & automata,std::function<void(std::string)> & out,std::vector<std::pair<std::string,std::string> > & tokens){
+    auto label = automata.get_token_label();
+    if(to_ignore_tokens.find(label)==to_ignore_tokens.end()){
+        out(token+" "+(label)+"\n");
+        tokens.push_back({token,label});
+    }
+}
+
+int analyze_file(std::string path,Automata automata,std::function<void(std::string)> & out,std::vector<std::pair<std::string,std::string> > & tokens){
     out(path+"\n");
     auto in_stream = std::wifstream(path);
     if(!in_stream.is_open()){
@@ -46,7 +57,7 @@ int analyze_file(std::string path,Automata automata,std::function<void(std::stri
                     in_stream.unget();
                 while(go_back--)
                     token.pop_back();
-                out(token+" "+automata.get_token_label()+"\n");
+                handle_found_token(token,automata,out,tokens);
             }else{
                 //check if it is space token to ignore it,otherwise print that the token cannot be recognized
                 if(!isspace(c)||!token.empty()){
@@ -70,7 +81,7 @@ int analyze_file(std::string path,Automata automata,std::function<void(std::stri
             if(next_status==2){
                 //inmmediate
                 //token found
-                out(token+" "+automata.get_token_label()+"\n");
+                handle_found_token(token,automata,out,tokens);
                 automata.restart();
                 token="";
             }
@@ -139,7 +150,8 @@ int main(int argc,char ** argv){
                 if(strcmp(ent->d_name,".")&&strcmp(ent->d_name,"..")){
                     char path[1024];
                     sprintf(path,"%s%s",cases_path_c_str,ent->d_name);
-                    if(analyze_file(std::string(path),automata,f_out)==EXIT_FAILURE)
+                    std::vector<std::pair<std::string,std::string> > tokens;
+                    if(analyze_file(std::string(path),automata,f_out,tokens)==EXIT_FAILURE)
                         return EXIT_FAILURE;
                 }
             }
@@ -149,7 +161,8 @@ int main(int argc,char ** argv){
         }
     }else{
         for(auto file_name : filenames){
-            if(analyze_file(file_name,automata,f_out)==EXIT_FAILURE)
+            std::vector<std::pair<std::string,std::string> > tokens;
+            if(analyze_file(file_name,automata,f_out,tokens)==EXIT_FAILURE)
                 return EXIT_FAILURE;
         }
     }
