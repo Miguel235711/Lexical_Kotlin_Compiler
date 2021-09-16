@@ -6,7 +6,7 @@ open class Dog {                // 1
 
 class Yorkshire : Dog() {       // 3
     override fun sayHello() {   // 4
-        println("wif wif!")
+        println("wif wif😋!")
     }
 }
 
