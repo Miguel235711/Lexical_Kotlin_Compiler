@@ -95,6 +95,11 @@ int analyze_file(std::string path,Automata automata,std::function<void(std::stri
             return EXIT_FAILURE;
     }
     handle_char('\n'); //for last token
+    if(token!=""){
+        //error 
+        print_error(row-1,col,c,path,token,out);
+        return EXIT_FAILURE;
+    }
     in_stream.close();
     return EXIT_SUCCESS;
     //return 0;
