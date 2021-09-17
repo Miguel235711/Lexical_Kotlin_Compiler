@@ -1,0 +1,39 @@
+.\lcases\l_29.kt
+for FOR
+( LPAREN
+c Identifier
+in IN
+'a' CharacterLiteral
+.. RANGE
+'d' CharacterLiteral
+) RPAREN
+{ LCURL
+print Identifier
+( LPAREN
+c Identifier
+) RPAREN
+} RCURL
+print Identifier
+( LPAREN
+" " lineStringLiteral
+) RPAREN
+for FOR
+( LPAREN
+c Identifier
+in IN
+'z' CharacterLiteral
+downTo Identifier
+'s' CharacterLiteral
+step Identifier
+2 IntegerLiteral
+) RPAREN
+{ LCURL
+print Identifier
+( LPAREN
+c Identifier
+) RPAREN
+} RCURL
+print Identifier
+( LPAREN
+" " lineStringLiteral
+) RPAREN

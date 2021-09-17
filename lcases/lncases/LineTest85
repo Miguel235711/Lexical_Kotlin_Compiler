@@ -1,0 +1,27 @@
+.\lcases\l_85.kt
+val VAL
+json Identifier
+= ASSIGNMENT
+js Identifier
+( LPAREN
+"{}" lineStringLiteral
+) RPAREN
+json Identifier
+. DOT
+name Identifier
+= ASSIGNMENT
+"Jane" lineStringLiteral
+json Identifier
+. DOT
+hobby Identifier
+= ASSIGNMENT
+"movies" lineStringLiteral
+println Identifier
+( LPAREN
+JSON Identifier
+. DOT
+stringify Identifier
+( LPAREN
+json Identifier
+) RPAREN
+) RPAREN

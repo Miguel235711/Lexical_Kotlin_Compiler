@@ -1,0 +1,36 @@
+.\lcases\l_30.kt
+val VAL
+x Identifier
+= ASSIGNMENT
+2 IntegerLiteral
+if IF
+( LPAREN
+x Identifier
+in IN
+1 IntegerLiteral
+.. RANGE
+5 IntegerLiteral
+) RPAREN
+{ LCURL
+print Identifier
+( LPAREN
+"x is in range from 1 to 5" lineStringLiteral
+) RPAREN
+} RCURL
+println Identifier
+( LPAREN
+) RPAREN
+if IF
+( LPAREN
+x Identifier
+!in NOT_IN
+6 IntegerLiteral
+.. RANGE
+10 IntegerLiteral
+) RPAREN
+{ LCURL
+print Identifier
+( LPAREN
+"x is not in range from 6 to 10" lineStringLiteral
+) RPAREN
+} RCURL

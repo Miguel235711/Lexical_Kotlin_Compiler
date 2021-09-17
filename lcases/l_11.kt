@@ -1,0 +1,1 @@
+var a: String = "initial"println(a)val b:Int=1val c=3

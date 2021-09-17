@@ -1,0 +1,19 @@
+.\lcases\l_86.kt
+external EXTERNAL
+fun FUN
+alert Identifier
+( LPAREN
+msg Identifier
+: COLON
+String Identifier
+) RPAREN
+fun FUN
+main Identifier
+( LPAREN
+) RPAREN
+{ LCURL
+alert Identifier
+( LPAREN
+"Hi!" lineStringLiteral
+) RPAREN
+} RCURL

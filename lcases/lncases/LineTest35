@@ -1,0 +1,51 @@
+.\lcases\l_35.kt
+enum ENUM
+class CLASS
+State Identifier
+{ LCURL
+IDLE Identifier
+, COMMA
+RUNNING Identifier
+, COMMA
+FINISHED Identifier
+} RCURL
+fun FUN
+main Identifier
+( LPAREN
+) RPAREN
+{ LCURL
+val VAL
+state Identifier
+= ASSIGNMENT
+State Identifier
+. DOT
+RUNNING Identifier
+val VAL
+message Identifier
+= ASSIGNMENT
+when WHEN
+( LPAREN
+state Identifier
+) RPAREN
+{ LCURL
+State Identifier
+. DOT
+IDLE Identifier
+-> ARROW
+"It's idle" lineStringLiteral
+State Identifier
+. DOT
+RUNNING Identifier
+-> ARROW
+"It's running" lineStringLiteral
+State Identifier
+. DOT
+FINISHED Identifier
+-> ARROW
+"It's finished" lineStringLiteral
+} RCURL
+println Identifier
+( LPAREN
+message Identifier
+) RPAREN
+} RCURL

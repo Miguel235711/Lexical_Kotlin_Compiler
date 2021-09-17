@@ -1,0 +1,40 @@
+.\new\62.kt
+val VAL
+numbers Identifier
+= ASSIGNMENT
+listOf Identifier
+( LPAREN
+1 IntegerLiteral
+, COMMA
+2 IntegerLiteral
+, COMMA
+3 IntegerLiteral
+) RPAREN
+val VAL
+empty Identifier
+= ASSIGNMENT
+emptyList Identifier
+< LANGLE
+Int Identifier
+> RANGLE
+( LPAREN
+) RPAREN
+val VAL
+only Identifier
+= ASSIGNMENT
+listOf Identifier
+( LPAREN
+3 IntegerLiteral
+) RPAREN
+println Identifier
+( LPAREN
+"Numbers: $numbers, min = ${numbers.minOrNull()} max = ${numbers.maxOrNull()}" lineStringLiteral
+) RPAREN
+println Identifier
+( LPAREN
+"Empty: $empty, min = ${empty.minOrNull()}, max = ${empty.maxOrNull()}" lineStringLiteral
+) RPAREN
+println Identifier
+( LPAREN
+"Only: $only, min = ${only.minOrNull()}, max = ${only.maxOrNull()}" lineStringLiteral
+) RPAREN

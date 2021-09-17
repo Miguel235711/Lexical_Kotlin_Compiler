@@ -1,0 +1,9 @@
+.\lcases\l_12.kt
+var VAR
+e Identifier
+: COLON
+Int Identifier
+println Identifier
+( LPAREN
+e Identifier
+) RPAREN

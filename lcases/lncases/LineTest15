@@ -1,0 +1,50 @@
+.\lcases\l_15.kt
+var VAR
+neverNull Identifier
+: COLON
+String Identifier
+= ASSIGNMENT
+"This can't be null" lineStringLiteral
+neverNull Identifier
+= ASSIGNMENT
+null NullLiteral
+var VAR
+nullable Identifier
+: COLON
+String Identifier
+? QUEST_NO_WS
+= ASSIGNMENT
+"You can keep a null here" lineStringLiteral
+nullable Identifier
+= ASSIGNMENT
+null NullLiteral
+var VAR
+inferredNonNull Identifier
+= ASSIGNMENT
+"The compiler assumes non-null" lineStringLiteral
+inferredNonNull Identifier
+= ASSIGNMENT
+null NullLiteral
+fun FUN
+strLength Identifier
+( LPAREN
+notNull Identifier
+: COLON
+String Identifier
+) RPAREN
+: COLON
+Int Identifier
+{ LCURL
+return RETURN
+notNull Identifier
+. DOT
+length Identifier
+} RCURL
+strLength Identifier
+( LPAREN
+neverNull Identifier
+) RPAREN
+strLength Identifier
+( LPAREN
+nullable Identifier
+) RPAREN

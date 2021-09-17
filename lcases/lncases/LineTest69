@@ -1,0 +1,46 @@
+.\lcases\l_69.kt
+fun FUN
+getNullableLength Identifier
+( LPAREN
+ns Identifier
+: COLON
+String Identifier
+? QUEST_NO_WS
+) RPAREN
+{ LCURL
+println Identifier
+( LPAREN
+"for \"$ns\":" lineStringLiteral
+) RPAREN
+ns Identifier
+? QUEST_NO_WS
+. DOT
+run Identifier
+{ LCURL
+println Identifier
+( LPAREN
+"\tis empty? " lineStringLiteral
++ ADD
+isEmpty Identifier
+( LPAREN
+) RPAREN
+) RPAREN
+println Identifier
+( LPAREN
+"\tlength=$length" lineStringLiteral
+) RPAREN
+length Identifier
+} RCURL
+} RCURL
+getNullableLength Identifier
+( LPAREN
+null NullLiteral
+) RPAREN
+getNullableLength Identifier
+( LPAREN
+"" lineStringLiteral
+) RPAREN
+getNullableLength Identifier
+( LPAREN
+"some string with Kotlin" lineStringLiteral
+) RPAREN

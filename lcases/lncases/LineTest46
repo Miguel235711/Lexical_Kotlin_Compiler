@@ -1,0 +1,21 @@
+.\lcases\l_46.kt
+fun FUN
+< LANGLE
+T Identifier
+> RANGLE
+T Identifier
+? QUEST_NO_WS
+. DOT
+nullSafeToString Identifier
+( LPAREN
+) RPAREN
+= ASSIGNMENT
+this THIS
+? QUEST_NO_WS
+. DOT
+toString Identifier
+( LPAREN
+) RPAREN
+? QUEST_NO_WS
+: COLON
+"NULL" lineStringLiteral

@@ -1,0 +1,1 @@
+val greeting="Kotliner"println("Hello $greeting")println("Hello ${greeting.toUpperCase()}")  // 2

@@ -1,0 +1,1 @@
+val words=listOf("foo","bar","baz","faz")val empty=emptyList<String>()val first=empty.firstOrNull()val last=empty.lastOrNull()val firstF=words.firstOrNull{it.startsWith('f')}val firstZ=words.firstOrNull{it.startsWith('z')}val lastF=words.lastOrNull{it.endsWith('f')}val lastZ = words.lastOrNull { it.endsWith('z') }      // 8

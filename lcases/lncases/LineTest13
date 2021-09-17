@@ -1,0 +1,26 @@
+.\lcases\l_13.kt
+val VAL
+d Identifier
+: COLON
+Int Identifier
+if IF
+( LPAREN
+someCondition Identifier
+( LPAREN
+) RPAREN
+) RPAREN
+{ LCURL
+d Identifier
+= ASSIGNMENT
+1 IntegerLiteral
+} RCURL
+else ELSE
+{ LCURL
+d Identifier
+= ASSIGNMENT
+2 IntegerLiteral
+} RCURL
+println Identifier
+( LPAREN
+d Identifier
+) RPAREN

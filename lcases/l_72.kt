@@ -1,0 +1,1 @@
+val jake=Person("Jake",30,"Android developer").also{writeCreationLog(it)}

@@ -17,10 +17,10 @@ fun accountsReport() {
         k, v -> println("ID $k: credit $v")
     }
 }
-
+asd)/*
 fun main() {
     accountsReport()                                                                    // 6
-    updatePointsCredit(1)                                                               // 7
+    updatePointsCredit(1) asd)                                                               // 7
     updatePointsCredit(1)                                                               
     updatePointsCredit(5)                                                               // 8 
     accountsReport()                                                                    // 9

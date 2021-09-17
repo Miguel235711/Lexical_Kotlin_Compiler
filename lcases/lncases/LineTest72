@@ -1,0 +1,20 @@
+.\lcases\l_72.kt
+val VAL
+jake Identifier
+= ASSIGNMENT
+Person Identifier
+( LPAREN
+"Jake" lineStringLiteral
+, COMMA
+30 IntegerLiteral
+, COMMA
+"Android developer" lineStringLiteral
+) RPAREN
+. DOT
+also Identifier
+{ LCURL
+writeCreationLog Identifier
+( LPAREN
+it Identifier
+) RPAREN
+} RCURL

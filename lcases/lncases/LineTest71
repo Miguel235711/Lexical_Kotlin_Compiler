@@ -1,0 +1,28 @@
+.\lcases\l_71.kt
+val VAL
+jake Identifier
+= ASSIGNMENT
+Person Identifier
+( LPAREN
+) RPAREN
+val VAL
+stringDescription Identifier
+= ASSIGNMENT
+jake Identifier
+. DOT
+apply Identifier
+{ LCURL
+name Identifier
+= ASSIGNMENT
+"Jake" lineStringLiteral
+age Identifier
+= ASSIGNMENT
+30 IntegerLiteral
+about Identifier
+= ASSIGNMENT
+"Android developer" lineStringLiteral
+} RCURL
+. DOT
+toString Identifier
+( LPAREN
+) RPAREN

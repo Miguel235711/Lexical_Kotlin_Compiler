@@ -1,0 +1,36 @@
+.\lcases\l_40.kt
+object OBJECT
+DoAuth Identifier
+{ LCURL
+fun FUN
+takeParams Identifier
+( LPAREN
+username Identifier
+: COLON
+String Identifier
+, COMMA
+password Identifier
+: COLON
+String Identifier
+) RPAREN
+{ LCURL
+println Identifier
+( LPAREN
+"input Auth parameters=$username:$password" lineStringLiteral
+) RPAREN
+} RCURL
+} RCURL
+fun FUN
+main Identifier
+( LPAREN
+) RPAREN
+{ LCURL
+DoAuth Identifier
+. DOT
+takeParams Identifier
+( LPAREN
+"foo" lineStringLiteral
+, COMMA
+"qwerty" lineStringLiteral
+) RPAREN
+} RCURL

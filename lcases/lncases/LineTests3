@@ -1,0 +1,25 @@
+.\cases\3.kt
+val VAL
+x Identifier
+= ASSIGNMENT
+33.3 DoubleLiteral
+; SEMICOLON
+val VAL
+abcd Identifier
+= ASSIGNMENT
+343 IntegerLiteral
+; SEMICOLON
+ad Identifier
+. DOT
+ejl Identifier
+= ASSIGNMENT
+"j ? l dkj * lk" lineStringLiteral
+; SEMICOLON
+return@ RETURN_AT
+fdf Identifier
+; SEMICOLON
+"fj\rfkl\ndj" lineStringLiteral
+"""""""" multiLineStringLiteral
+fdjflkfdfd Identifier  //Diferencia principalmente porque no hay espacio o salto de linea
+""""""" multiLineStringLiteral
+fd Identifier

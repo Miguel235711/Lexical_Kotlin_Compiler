@@ -1,0 +1,21 @@
+.\lcases\l_11.kt
+var VAR
+a Identifier
+: COLON
+String Identifier
+= ASSIGNMENT
+"initial" lineStringLiteral
+println Identifier
+( LPAREN
+a Identifier
+) RPAREN
+val VAL
+b Identifier
+: COLON
+Int Identifier
+= ASSIGNMENT
+1 IntegerLiteral
+val VAL
+c Identifier
+= ASSIGNMENT
+3 IntegerLiteral

@@ -1,0 +1,13 @@
+.\new\78.kt
+val VAL
+greeting Identifier
+= ASSIGNMENT
+"Kotliner" lineStringLiteral
+println Identifier
+( LPAREN
+"Hello $greeting" lineStringLiteral
+) RPAREN
+println Identifier
+( LPAREN
+"Hello ${greeting.toUpperCase()}" lineStringLiteral
+) RPAREN

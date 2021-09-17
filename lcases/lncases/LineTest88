@@ -1,0 +1,85 @@
+.\lcases\l_88.kt
+val VAL
+result Identifier
+= ASSIGNMENT
+html Identifier
+{ LCURL
+head Identifier
+{ LCURL
+title Identifier
+{ LCURL
++ ADD
+"HTML encoding with Kotlin" lineStringLiteral
+} RCURL
+} RCURL
+body Identifier
+{ LCURL
+h1 Identifier
+{ LCURL
++ ADD
+"HTML encoding with Kotlin" lineStringLiteral
+} RCURL
+p Identifier
+{ LCURL
++ ADD
+"this format can be used as an" lineStringLiteral
++ ADD
+"alternative markup to HTML" lineStringLiteral
+} RCURL
+a Identifier
+( LPAREN
+href Identifier
+= ASSIGNMENT
+"http://kotlinlang.org" lineStringLiteral
+) RPAREN
+{ LCURL
++ ADD
+"Kotlin" lineStringLiteral
+} RCURL
+p Identifier
+{ LCURL
++ ADD
+"This is some" lineStringLiteral
+b Identifier
+{ LCURL
++ ADD
+"mixed" lineStringLiteral
+} RCURL
++ ADD
+"text. For more see the" lineStringLiteral
+a Identifier
+( LPAREN
+href Identifier
+= ASSIGNMENT
+"http://kotlinlang.org" lineStringLiteral
+) RPAREN
+{ LCURL
++ ADD
+"Kotlin" lineStringLiteral
+} RCURL
++ ADD
+"project" lineStringLiteral
+} RCURL
+p Identifier
+{ LCURL
++ ADD
+"some text" lineStringLiteral
+ul Identifier
+{ LCURL
+for FOR
+( LPAREN
+i Identifier
+in IN
+1 IntegerLiteral
+.. RANGE
+5 IntegerLiteral
+) RPAREN
+li Identifier
+{ LCURL
++ ADD
+"${i}*2=${i*2}" lineStringLiteral
+} RCURL
+} RCURL
+} RCURL
+} RCURL
+} RCURL

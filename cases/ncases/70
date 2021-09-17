@@ -1,0 +1,15 @@
+.\new\70.kt
+with Identifier
+( LPAREN
+configuration Identifier
+) RPAREN
+{ LCURL
+println Identifier
+( LPAREN
+"$host:$port" lineStringLiteral
+) RPAREN
+} RCURL
+println Identifier
+( LPAREN
+"${configuration.host}:${configuration.port}" lineStringLiteral
+) RPAREN

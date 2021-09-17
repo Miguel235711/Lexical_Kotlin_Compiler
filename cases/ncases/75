@@ -1,0 +1,45 @@
+.\new\75.kt
+class CLASS
+LazySample Identifier
+{ LCURL
+init INIT
+{ LCURL
+println Identifier
+( LPAREN
+"created!" lineStringLiteral
+) RPAREN
+} RCURL
+val VAL
+lazyStr Identifier
+: COLON
+String Identifier
+by BY
+lazy Identifier
+{ LCURL
+println Identifier
+( LPAREN
+"computed!" lineStringLiteral
+) RPAREN
+"my lazy" lineStringLiteral
+} RCURL
+} RCURL
+fun FUN
+main Identifier
+( LPAREN
+) RPAREN
+{ LCURL
+val VAL
+sample Identifier
+= ASSIGNMENT
+LazySample Identifier
+( LPAREN
+) RPAREN
+println Identifier
+( LPAREN
+"lazyStr = ${sample.lazyStr}" lineStringLiteral
+) RPAREN
+println Identifier
+( LPAREN
+" = ${sample.lazyStr}" lineStringLiteral
+) RPAREN
+} RCURL

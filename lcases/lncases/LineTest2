@@ -1,0 +1,6 @@
+.\lcases\l_2.kt
+val VAL
+x Identifier
+= ASSIGNMENT
+3 IntegerLiteral
+; SEMICOLON

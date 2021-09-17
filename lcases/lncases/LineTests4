@@ -1,0 +1,17 @@
+.\cases\4.kt
+package PACKAGE
+org Identifier
+. DOT
+kotlinlang Identifier
+. DOT
+play Identifier
+fun FUN
+main Identifier
+( LPAREN
+) RPAREN
+{ LCURL
+println Identifier
+( LPAREN
+"Hello, World!" lineStringLiteral
+) RPAREN
+} RCURL

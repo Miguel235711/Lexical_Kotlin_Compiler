@@ -1,0 +1,24 @@
+.\lcases\l_25.kt
+val VAL
+cakes Identifier
+= ASSIGNMENT
+listOf Identifier
+( LPAREN
+"carrot" lineStringLiteral
+, COMMA
+"cheese" lineStringLiteral
+, COMMA
+"chocolate" lineStringLiteral
+) RPAREN
+for FOR
+( LPAREN
+cake Identifier
+in IN
+cakes Identifier
+) RPAREN
+{ LCURL
+println Identifier
+( LPAREN
+"Yummy, it's a $cake cake!" lineStringLiteral
+) RPAREN
+} RCURL

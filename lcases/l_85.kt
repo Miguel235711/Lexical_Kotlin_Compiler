@@ -1,0 +1,1 @@
+val json=js("{}")json.name="Jane"json.hobby="movies"println(JSON.stringify(json))     // 3

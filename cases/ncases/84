@@ -1,0 +1,5 @@
+.\new\84.kt
+js Identifier
+( LPAREN
+"alert(\"alert from Kotlin!\")" lineStringLiteral
+) RPAREN

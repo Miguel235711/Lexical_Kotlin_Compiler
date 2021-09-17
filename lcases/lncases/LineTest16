@@ -1,0 +1,34 @@
+.\lcases\l_16.kt
+fun FUN
+describeString Identifier
+( LPAREN
+maybeString Identifier
+: COLON
+String Identifier
+? QUEST_NO_WS
+) RPAREN
+: COLON
+String Identifier
+{ LCURL
+if IF
+( LPAREN
+maybeString Identifier
+!= EXCL_EQ
+null NullLiteral
+&& CONJ
+maybeString Identifier
+. DOT
+length Identifier
+> RANGLE
+0 IntegerLiteral
+) RPAREN
+{ LCURL
+return RETURN
+"String of length ${maybeString.length}" lineStringLiteral
+} RCURL
+else ELSE
+{ LCURL
+return RETURN
+"Empty or null string" lineStringLiteral
+} RCURL
+} RCURL
