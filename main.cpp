@@ -17,7 +17,8 @@ std::string get_char_error_msg(int row,int col,wchar_t c,const std::string & pat
 }
 
 void print_error(int row,int col,wchar_t c,std::string & path,std::string & token,std::function<void(std::string)> & out){
-    token.push_back(c);
+    if(token.empty()||c=='\n'||c=='\r')
+        token.push_back(c);
     out(get_char_error_msg(row,col,token.back(),path)+token+" is not a valid token\n");
 }
 
