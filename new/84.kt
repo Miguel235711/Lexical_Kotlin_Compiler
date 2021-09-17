@@ -1,0 +1,1 @@
+js("alert(\"alert from Kotlin!\")") // 1
