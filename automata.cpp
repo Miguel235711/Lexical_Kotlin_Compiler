@@ -119,7 +119,8 @@ void Automata::add_adhoc_nodes(){
     auto & _16_ch = adhoc_nodes[16]->children;
     _16_ch['"']={adhoc_nodes[19],0};
     _16_ch['\\']={adhoc_nodes[20],0};
-    all_but(_16_ch,{adhoc_nodes[17],0},{'"','\\'});
+    _16_ch['\n']={adhoc_nodes[57],0};
+    all_but(_16_ch,{adhoc_nodes[17],0},{'"','\\','\n'});
     //17
     auto & _17_ch = adhoc_nodes[17]->children;
     _17_ch['"']={adhoc_nodes[18],0};
